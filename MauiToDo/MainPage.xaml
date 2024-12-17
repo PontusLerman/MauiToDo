@@ -9,7 +9,7 @@
 
 
     <Grid RowDefinitions="Auto, *"
-          ColumnDefinitions="*,Auto"@
+          ColumnDefinitions="*,Auto"
           Padding="30,0">
 
         <Button Text="Add note"

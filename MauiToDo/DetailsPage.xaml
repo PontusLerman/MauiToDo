@@ -4,7 +4,7 @@
              xmlns:vm="clr-namespace:MauiToDo.ViewModels"
              x:Class="MauiToDo.DetailsPage"
              x:DataType="vm:DetailsViewModel"
-             Title="{Binding Note.Title, Mode=TwoWay@}">
+             Title="{Binding Note.Title, Mode=TwoWay}">
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="10">
