@@ -13,7 +13,7 @@
           Padding="30,0"
           Background="#FDDB54">
         
-        <Button Text="Add note"
+        <Button Text="New note"
                 Background="#FDCB36"
                 TextColor="Black"
                 Command="{Binding AddCommand}"

@@ -27,7 +27,9 @@
 
             <Frame>
                 <VerticalStackLayout>
-                    <Picker Title="Choose Background Color"
+                    <Label Text="Note color" 
+                           FontAttributes="Bold" />
+                    <Picker Title="{Binding Note.HexColor.ColorName}"
                             ItemsSource="{Binding NoteColors}"    
                             SelectedItem="{Binding Note.HexColor}"
                             ItemDisplayBinding="{Binding ColorName}">
