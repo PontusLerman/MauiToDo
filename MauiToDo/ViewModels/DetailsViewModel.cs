@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MauiToDo.Models;
+using System.Collections.ObjectModel;
 
 namespace MauiToDo.ViewModels
 {
@@ -9,6 +10,16 @@ namespace MauiToDo.ViewModels
     {
         [ObservableProperty]
         Note note;
+
+        [ObservableProperty]
+        ObservableCollection<NoteColor> noteColors = new ObservableCollection<NoteColor>() 
+        {
+            new NoteColor(){ColorName = "Light yellow", ColorHex = "#FDCB36"},
+            new NoteColor(){ColorName = "Light blue", ColorHex = "#3EBFDE"},
+            new NoteColor(){ColorName = "Light green", ColorHex = "#99C75A"},
+            new NoteColor(){ColorName = "Light pink", ColorHex = "#EE6B9D"},
+            new NoteColor(){ColorName = "Light orange", ColorHex = "#F1905B"},
+        };
 
         [RelayCommand]
         async Task SaveAsync()

@@ -10,11 +10,15 @@
 
     <Grid RowDefinitions="Auto, *"
           ColumnDefinitions="*,Auto"
-          Padding="30,0">
-
+          Padding="30,0"
+          Background="#FDDB54">
+        
         <Button Text="Add note"
+                Background="#FDCB36"
+                TextColor="Black"
                 Command="{Binding AddCommand}"
                 Margin="10"/>
+        
         <CollectionView ItemsSource="{Binding Notes}"
                         Grid.Row="1"
                         Grid.RowSpan="2">
@@ -29,13 +33,14 @@
                                        CommandParameter="{Binding .}"/>
                             </SwipeItems>
                         </SwipeView.RightItems>
-                        <Frame Margin="10">
+                        <Frame Margin="10"
+                               BackgroundColor="{Binding HexColor.ColorHex, Mode=TwoWay}">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer 
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainViewModel}}, Path=GoToDetailCommand}"
                                     CommandParameter="{Binding .}"/>
                             </Frame.GestureRecognizers>
-                            <Grid>
+                            <Grid >
                                 <Label Text="{Binding Title}"/>
                                 <Label Text="{Binding Date, StringFormat='{}{0:yy/MM/dd HH:mm}'}"  
                                        HorizontalOptions="End"/>
