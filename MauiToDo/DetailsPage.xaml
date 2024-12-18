@@ -6,15 +6,36 @@
              x:DataType="vm:DetailsViewModel"
              Title="{Binding Note.Title, Mode=TwoWay}">
 
-    <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="10">
-            <Label Text="Title" FontAttributes="Bold" />
-            <Entry Text="{Binding Note.Title}"  />
+    <ScrollView BackgroundColor="{Binding Note.HexColor.ColorHex,Mode=TwoWay}">
+        <VerticalStackLayout Padding="20" 
+                             Spacing="10">
+            <Frame>
+                <VerticalStackLayout>
+                    <Label Text="Title" 
+                           FontAttributes="Bold" />
+                    <Entry Text="{Binding Note.Title}"/>
+                </VerticalStackLayout>
+            </Frame>
 
-            <Label Text="Text" FontAttributes="Bold" />
-            <Editor Text="{Binding Note.Text}" HeightRequest="200" />
+            <Frame>
+                <VerticalStackLayout>
+                    <Label Text="Text" 
+                           FontAttributes="Bold" />
+                    <Editor Text="{Binding Note.Text}" HeightRequest="200"/>
+                </VerticalStackLayout>
+            </Frame>
 
-            <Button Text="Save" Command="{Binding SaveCommand}" />
+            <Frame>
+                <VerticalStackLayout>
+                    <Picker Title="Choose Background Color"
+                            ItemsSource="{Binding NoteColors}"    
+                            SelectedItem="{Binding Note.HexColor}"
+                            ItemDisplayBinding="{Binding ColorName}">
+                    </Picker>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Button Text="Save" Command="{Binding SaveCommand}"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

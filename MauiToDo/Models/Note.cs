@@ -5,9 +5,6 @@ namespace MauiToDo.Models
     public partial class Note : ObservableObject
     {
         [ObservableProperty]
-        public Guid id = new Guid();
-
-        [ObservableProperty]
         public string title  = "New note";
 
         [ObservableProperty]
@@ -15,5 +12,8 @@ namespace MauiToDo.Models
 
         [ObservableProperty]
         public DateTime date = DateTime.Now;
+
+        [ObservableProperty]
+        public NoteColor hexColor = new NoteColor() { ColorName = "Light yellow", ColorHex = "#FDCB36" };
     }
 }
