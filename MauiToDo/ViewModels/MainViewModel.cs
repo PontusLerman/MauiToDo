@@ -22,7 +22,9 @@ namespace MauiToDo.ViewModels
         [RelayCommand]
         async Task AddAsync()
         {
-            Note note = new Note();
+            Note note = new Note() { HexColor = new NoteColor() 
+                                   { ColorName = "Light yellow", 
+                                     ColorHex = "#FDCB36" }};
 
             await Shell.Current.GoToAsync($"{nameof(DetailsPage)}",
                true,

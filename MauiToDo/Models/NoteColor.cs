@@ -5,8 +5,8 @@ namespace MauiToDo.Models
     public partial class NoteColor : ObservableObject
     {
         [ObservableProperty]
-        public string colorName;
+        private string colorName;
         [ObservableProperty]
-        public string colorHex;
+        private string colorHex;
     }
 }
