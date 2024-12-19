@@ -21,7 +21,8 @@
                 <VerticalStackLayout>
                     <Label Text="Text" 
                            FontAttributes="Bold" />
-                    <Editor Text="{Binding Note.Text}" HeightRequest="200"/>
+                    <Editor Text="{Binding Note.Text}" 
+                            HeightRequest="200"/>
                 </VerticalStackLayout>
             </Frame>
 
